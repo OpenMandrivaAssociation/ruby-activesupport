@@ -1,7 +1,7 @@
 %define rname activesupport
 %define name ruby-%{rname}
 %define version 1.3.1
-%define release %mkrel 1
+%define release %mkrel 2
 
 Summary:	Support and utility classes used by the Rails framework
 Name:		%{name}
@@ -10,7 +10,7 @@ Release:	%{release}
 URL:		http://ar.rubyonrails.com/
 Source0:	%{rname}-%{version}.gem
 License:	MIT
-Group:		Development/Other
+Group:		Development/Ruby
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildArch:	noarch
 Requires:	ruby
@@ -39,7 +39,7 @@ rm -rf %buildroot
 mkdir -p $RPM_BUILD_ROOT{%{ruby_sitelibdir},%{ruby_ridir}}
 
 cp -a lib/* $RPM_BUILD_ROOT%{ruby_sitelibdir}
-cp -a ri/ri/ActiveSupport $RPM_BUILD_ROOT%{ruby_ridir}
+cp -a ri/ActiveSupport $RPM_BUILD_ROOT%{ruby_ridir}
 install -D -m 644 %rname-%version.gemspec $RPM_BUILD_ROOT%{ruby_gemdir}/specifications/%rname-%version.gemspec
 
 %clean
