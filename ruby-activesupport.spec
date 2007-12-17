@@ -11,7 +11,6 @@ URL:		http://ar.rubyonrails.com/
 Source0:	%{rname}-%{version}.gem
 License:	MIT
 Group:		Development/Ruby
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildArch:	noarch
 Requires:	ruby
 BuildRequires:	ruby-RubyGems 
