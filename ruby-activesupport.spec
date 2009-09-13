@@ -1,6 +1,6 @@
 %define rname activesupport
 %define name ruby-%{rname}
-%define version 2.3.3
+%define version 2.3.4
 %define release %mkrel 1
 
 Summary:	Support and utility classes used by the Rails framework
