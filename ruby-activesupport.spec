@@ -1,19 +1,15 @@
-%define rname activesupport
-%define name ruby-%{rname}
-%define version 2.3.4
-%define release %mkrel 1
+%define	rname	activesupport
 
 Summary:	Support and utility classes used by the Rails framework
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		ruby-%{rname}
+Version:	2.3.9
+Release:	%mkrel 1
 URL:		http://ar.rubyonrails.com/
-Source0:	%{rname}-%{version}.gem
+Source0:	http://rubygems.org/downloads/%{rname}-%{version}.gem
 License:	MIT
 Group:		Development/Ruby
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildArch:	noarch
-Requires:	ruby
 BuildRequires:	ruby-RubyGems 
 
 %description
@@ -21,34 +17,20 @@ Utility library which carries commonly used classes and goodies from the Rails
 framework.
 
 %prep
-rm -rf %rname-%version
-rm -rf tmp-%rname-%version
-mkdir tmp-%rname-%version
-gem install --ignore-dependencies %{SOURCE0} --no-rdoc --install-dir `pwd`/tmp-%rname-%version
-mv tmp-%rname-%version/gems/%rname-%version .
-mv tmp-%rname-%version/specifications/%rname-%version.gemspec %rname-%version/
-rm -rf tmp-%rname-%version/gems
-%setup -T -D -n %rname-%version
 
 %build
-rdoc --ri --op ri lib
-rdoc --op rdoc lib
 
 %install
-rm -rf %buildroot
-mkdir -p $RPM_BUILD_ROOT{%{ruby_sitelibdir},%{ruby_ridir}}
+rm -rf %{buildroot}
+gem install -E -n %{buildroot}%{_bindir} --local --install-dir %{buildroot}/%{ruby_gemdir} --force %{SOURCE0}
 
-cp -a lib/* $RPM_BUILD_ROOT%{ruby_sitelibdir}
-cp -a ri/ActiveSupport $RPM_BUILD_ROOT%{ruby_ridir}
-install -D -m 644 %rname-%version.gemspec $RPM_BUILD_ROOT%{ruby_gemdir}/specifications/%rname-%version.gemspec
+rm -rf %{buildroot}%{ruby_gemdir}/cache
 
 %clean
-rm -rf %buildroot
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%{ruby_sitelibdir}/*
-%{ruby_ridir}/*
-%{ruby_gemdir}/specifications/%rname-%version.gemspec
-%doc CHANGELOG rdoc
-
+%doc %{ruby_gemdir}/doc/%{rname}-%{version}
+%{ruby_gemdir}/gems/%{rname}-%{version}
+%{ruby_gemdir}/specifications/%{rname}-%{version}.gemspec
