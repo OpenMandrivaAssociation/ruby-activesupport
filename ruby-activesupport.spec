@@ -2,8 +2,8 @@
 
 Summary:	Support and utility classes used by the Rails framework
 Name:		ruby-%{rname}
-Version:	2.3.10
-Release:	%mkrel 2
+Version:	2.3.11
+Release:	%mkrel 1
 URL:		http://as.rubyonrails.com/
 Source0:	http://rubygems.org/downloads/%{rname}-%{version}.gem
 License:	MIT
