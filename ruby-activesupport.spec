@@ -2,7 +2,7 @@
 
 Summary:	Support and utility classes used by the Rails framework
 Name:		ruby-%{rname}
-Version:	2.3.11
+Version:	3.1.0
 Release:	%mkrel 1
 URL:		http://as.rubyonrails.com/
 Source0:	http://rubygems.org/downloads/%{rname}-%{version}.gem
@@ -11,6 +11,7 @@ Group:		Development/Ruby
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildArch:	noarch
 BuildRequires:	ruby-RubyGems 
+BuildRequires:	ruby-rdoc 
 Provides:	rubygem(%{rname})
 
 %description
