@@ -24,7 +24,7 @@ framework.
 
 %install
 rm -rf %{buildroot}
-gem install -E -n %{buildroot}%{_bindir} --local --install-dir %{buildroot}/%{ruby_gemdir} --force %{SOURCE0}
+gem install -E -n %{buildroot}%{_bindir} --no-rdoc --no-ri --local --install-dir %{buildroot}/%{ruby_gemdir} --force %{SOURCE0}
 
 rm -rf %{buildroot}%{ruby_gemdir}/cache
 
@@ -33,6 +33,5 @@ rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
-%doc %{ruby_gemdir}/doc/%{rname}-%{version}
 %{ruby_gemdir}/gems/%{rname}-%{version}
 %{ruby_gemdir}/specifications/%{rname}-%{version}.gemspec
