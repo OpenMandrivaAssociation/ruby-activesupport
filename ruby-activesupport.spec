@@ -10,7 +10,6 @@ License:	MIT
 Group:		Development/Ruby
 BuildArch:	noarch
 BuildRequires:	ruby-RubyGems 
-BuildRequires:	ruby-rdoc 
 Provides:	rubygem(%{rname})
 
 %description
