@@ -1,7 +1,7 @@
 %define	rname	activesupport
 
 Summary:	Support and utility classes used by the Rails framework
-Name:		rubygem-%{rname}
+Name:		ruby-%{rname}
 Version:	3.2.3
 Release:	1
 URL:		http://as.rubyonrails.com/
