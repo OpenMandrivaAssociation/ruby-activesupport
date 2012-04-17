@@ -3,7 +3,7 @@
 Summary:	Support and utility classes used by the Rails framework
 Name:		ruby-%{rname}
 Version:	3.2.3
-Release:	1
+Release:	2
 URL:		http://as.rubyonrails.com/
 Source0:	http://rubygems.org/downloads/%{rname}-%{version}.gem
 License:	MIT
@@ -11,6 +11,7 @@ Group:		Development/Ruby
 BuildArch:	noarch
 BuildRequires:	ruby-RubyGems 
 Provides:	rubygem(%{rname})
+Provides:	rubygem-activesupport
 
 %description
 Utility library which carries commonly used classes and goodies from the Rails
