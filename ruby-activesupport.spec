@@ -5,7 +5,7 @@ Summary:	Support and utility classes used by the Rails framework
 Name:		ruby-%{rname}
 Version:	4.1.1
 Release:	4
-URL:		http://as.rubyonrails.com/
+URL:		https://as.rubyonrails.com/
 Source0:	http://rubygems.org/downloads/%{rname}-%{version}.gem
 License:	MIT
 Group:		Development/Ruby
